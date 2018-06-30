@@ -1,0 +1,1 @@
+./anka --path=./runpath

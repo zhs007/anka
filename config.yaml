@@ -1,0 +1,9 @@
+webservaddr: ':3721'
+grpcservaddr: ':3722'
+logpath: './output.log'
+errpath: './error.log'
+loglevel: 'DEBUG'
+dbpath: './dbpath'
+guestdbname: 'dtguest'
+webserv: true
+grpcserv: true
