@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package netcore;
+
+enum NodeType {
+    DB      = 1;
+    CLIENT  = 10;
+}
+
+message CtrlJoin {
+    NodeType nodetype = 1;
+    string servaddr = 2;
+    string nameid = 3;
+}
+  
+message ReplyCtrl {
+    int32 result = 1;
+}
+
+enum ChannelType {
+    NODEINFO    = 1;
+}
+
+message Subscribe {
+    ChannelType type = 1;
+}
+
+message NodeInfo {
+    NodeType nodetype = 1;
+    string servaddr = 2;
+    string nameid = 3;
+}
+
+message ChannelInfo {
+    ChannelType type = 1;
+    NodeInfo nodeinfo = 2;
+}
+
+service NetCoreServ {
+    rpc join(CtrlJoin) returns (ReplyCtrl) {}
+    rpc subscribe(Subscribe) returns (stream ChannelInfo) {}
+}
