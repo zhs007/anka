@@ -18,6 +18,7 @@ const (
 type Node struct {
 	NameID   string `json:"nameid"`
 	ServAddr string `json:"servaddr"`
+	LastTime int64  `json:"lasttime"`
 }
 
 var mapNode map[string]*Node

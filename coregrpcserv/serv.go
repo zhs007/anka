@@ -1,4 +1,4 @@
-package grpcserv
+package coregrpcserv
 
 import (
 	"context"

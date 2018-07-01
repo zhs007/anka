@@ -4,7 +4,7 @@ import (
 	"sync"
 
 	"github.com/zhs007/anka/base"
-	"github.com/zhs007/anka/grpcserv"
+	"github.com/zhs007/anka/coregrpcserv"
 	"github.com/zhs007/anka/model/node"
 )
 
@@ -23,7 +23,7 @@ func StartServ() {
 	// fmt.Println(cfg.GrpcServAddr)
 
 	wg.Add(1)
-	go grpcserv.StartServ(cfg.GrpcServAddr, &wg)
+	go coregrpcserv.StartServ(cfg.CoreGrpcAddr, &wg)
 
 	// wg.Add(1)
 	// go webserv.StartServ(cfg.WebServAddr, &wg)

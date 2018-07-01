@@ -1,5 +1,6 @@
-webservaddr: ':3721'
-grpcservaddr: ':3722'
+coregrpcaddr: ':3721'
+peeraddr: '127.0.0.1:3721'
+webservaddr: ':3722'
 logpath: './output.log'
 errpath: './error.log'
 loglevel: 'DEBUG'

@@ -12,7 +12,8 @@ import (
 // Config - config
 type Config struct {
 	WebServAddr  string
-	GrpcServAddr string
+	CoreGrpcAddr string
+	PeerAddr     string
 	LogPath      string
 	ErrPath      string
 	LogLevel     string
