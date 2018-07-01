@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/zhs007/anka/base"
 	"github.com/zhs007/anka/db"
@@ -31,6 +32,23 @@ func loadAllNodes() (err error) {
 	coredb := db.GetDBNode(cfg.CoreDbName)
 	if coredb == nil {
 		base.Info("coredb is nil")
+	}
+
+	err = loadMyNode(coredb)
+	if err != nil {
+		return
+	}
+
+	if myNode.NameID == "" {
+		myNode.NameID, err = base.GenerateNameID()
+		if err != nil {
+			return
+		}
+
+		myNode.LastTime = time.Now().Unix()
+		myNode.ServAddr = cfg.CoreGrpcAddr
+
+		saveMyNode(coredb)
 	}
 
 	err = coredb.Foreach(PREFIX, func(key string, val []byte) {
