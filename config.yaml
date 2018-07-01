@@ -4,6 +4,6 @@ logpath: './output.log'
 errpath: './error.log'
 loglevel: 'DEBUG'
 dbpath: './dbpath'
-guestdbname: 'dtguest'
+coredbname: 'anka'
 webserv: true
 grpcserv: true

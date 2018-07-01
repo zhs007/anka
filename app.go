@@ -5,6 +5,7 @@ import (
 
 	"github.com/zhs007/anka/base"
 	"github.com/zhs007/anka/grpcserv"
+	"github.com/zhs007/anka/model/node"
 )
 
 var wg sync.WaitGroup
@@ -15,6 +16,7 @@ func StartServ() {
 	base.Info("start...")
 	cfg := base.GetConfig()
 
+	node.InitNodeMgr()
 	// model.LoadGameStatistics()
 
 	// fmt.Println(cfg.WebServAddr)

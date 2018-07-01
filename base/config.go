@@ -17,7 +17,7 @@ type Config struct {
 	ErrPath      string
 	LogLevel     string
 	DbPath       string
-	GuestDbName  string
+	CoreDbName   string
 }
 
 var cfg Config
